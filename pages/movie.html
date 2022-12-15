@@ -5,95 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
-    <link rel="stylesheet" href="navbar.css">
-    <!-- <link rel="stylesheet" href="index.css"> -->
-    <style>
-        #content{
-            width: 100vw;
-            /* height: 100vh; */
-            border: 1px solid rgb(255, 255, 255);
-            /* margin: auto; */
-        }
-        .content{
-            width: 100vw;
-            background-color: #0B1F35;
-            color: white;
-            /* height: 100vh; */
-            /* border: 1px solid red; */
-            margin: auto;
-            margin-top: 130px;
-        }
-        .contentDiv{
-            width: 90vw;
-            /* height: 60vh; */
-            /* border: 1px solid green; */
-            margin: 50px auto;
-            /* margin-top: 30px; */
-            display: flex;
-        }
-        .contentDiv .contentDivLeft img {
-            /* width: 300px; */
-            height: 450px;
-        }
-        .contentDivLeft{
-            margin-right: 50px;
-        }
-
-        .contentCastParent{
-            width: 100vw;
-            /* border: 1px solid red; */
-            margin: auto;
-        }
-        .contentCast{
-            width: 90vw;
-            /* height: 30vh; */
-            /* border: 1px solid green; */
-            margin:auto;
-        }
-        .contentCastDivParent{
-            overflow-x: scroll;
-        }
-        .contentCastDiv{
-            width: 90vw;
-            /* height: auto; */
-            /* border: 1px solid green; */
-            display: flex;
-            margin: 0;
-            padding: 0;
-            /* overflow-x: scroll; */
-            margin-bottom: 50px;
-            list-style-type: none;
-            list-style-position: inside;
-        }
-        .castBox{
-            margin: 0px 8px;
-            min-width: 140px;
-            width: 140px;
-            border-radius: 5px;
-            border: 1px solid rgb(229, 229, 229);
-            box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-        }
-        .castBox .castBoxImg{
-            width: 100%;
-        }
-        .castBox > div > p {
-            margin-bottom: 0;
-            font-size: 0.9em;
-        }
-        .castBox > div > h3 {
-            font-size: 1em;
-        }
-        
-        .castBox > div {
-            margin-left: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/movie.css">
 </head>
 <body>
     <div class="navbar">
         <div class="navberFixed">
             <div class="navContainer">
-                <div class="logo"><a href="index.html"><h2>Home</h2></a></div>
+                <div class="logo"><a href="../index.html"><h2>Home</h2></a></div>
                 <div class="search-container right-element">
                     <input oninput="showData()" type="search" id="searchField" placeholder="Search"><button onclick="showData()">Search</button>
                     <div class="result-holder element-show" id="resultHolder">
@@ -110,7 +29,7 @@
                         </a> -->
                     </div>
                 </div>
-                <div class="loging right-element"><a href="trending.html">Treanding</a></div>
+                <div class="loging right-element"><a href="../index.html">Treanding</a></div>
             </div>
         </div>
     </div>
@@ -148,7 +67,7 @@
     </div>
 </body>
 </html>
-<script src="index.js"></script>
+<script src="../scripts/index.js"></script>
 <script>
     var element = JSON.parse(localStorage.getItem("movie"));
     // console.log(element," clicked ");

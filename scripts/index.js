@@ -44,7 +44,7 @@ function showmovielist(data) {
     resultHolder.innerHTML = null
     data.forEach( function(element,index) {
         var a = document.createElement("a")
-        a.href = "movie.html"
+        a.href = "./pages/movie.html"
         if(index<5){
             a.innerHTML+=
             `<div class="result-holderDiv">
@@ -123,7 +123,7 @@ var url_3 = `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`
             div.addEventListener("click", function(){
                 console.log(element," clicked ");
                 localStorage.setItem("movie", JSON.stringify(element));
-                location.href = "movie.html"
+                location.href = "./pages/movie.html"
             })
             content.append(div);
         });

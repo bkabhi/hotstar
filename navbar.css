@@ -1,0 +1,128 @@
+body{
+    font-family: "Roboto","HelveticaNeue-Light",sans-serif;
+    /* max-width: 100%; */
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/* button{
+    cursor: pointer;
+    padding: 6px;
+} */
+/* .navbar{
+    min-height: 80px;
+    background: #141b29;
+    border: 1px solid red;
+} */
+.navberFixed{
+    /* border: 1px solid red; */
+    width: 100vw;
+    min-height: 80px;
+    position: fixed;
+    /* top: 0; */
+    background: #141b29;
+    color: white;
+    margin: auto;
+}
+.navContainer{
+    /* border: 1px solid rgb(255, 255, 255); */
+    width: 90vw;
+    margin: auto;
+    /* background: #141b29; */
+    min-height: 80px;
+}
+.navContainer {
+    /* padding: 0 50px; */
+    /* margin: 0 auto; */
+    /* margin-top: 6px;
+    min-height: 66px; */
+    display: flex;
+    align-items: center; 
+}
+.navContainer > div{
+    /* min-height: 66px; */
+    width: 33vw;
+    /* border: 5px solid blue; */
+}
+.header .nav-container .search-container {
+    position: relative;
+    z-index: 1;
+}
+.search-container > .input-open {
+    width: 360px;
+}
+.search-container > input {
+    position: relative;
+    width: 240px;
+    height: 32px;
+    /* float: right; */
+}
+.search-container > input:focus {
+    outline: none;
+    width: 360px;
+    border-bottom: 1px solid #1f80e0;
+}
+#resultHolder{
+    position: absolute;
+    /* width: 300px; */
+    height: auto;
+    /* overflow: scroll; */
+    transform: scale(0);
+    margin-right: 15px;
+}
+
+#resultHolder .result-holderDiv{
+    height: 100px;
+    width: 350px;
+    /* border-radius: 5px; */
+    border: 5px solid rgb(65, 65, 65);
+    background-color: rgb(32, 32, 32);
+    color: white;
+    display: flex;
+}
+#resultHolder > a>.result-holderDiv div p {
+    font-size: 15px;
+    /* width: 300px; */
+}
+#resultHolder > a>.result-holderDiv div h2{
+    font-size: 15px;
+}
+
+.result-holderDivImg{
+    height: 75px;
+    margin: 10px;
+}
+
+.search-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.search-container > #resultHolder{
+    margin-top: 33px;
+}
+
+.loging{
+    display: flex;
+    justify-content: center;
+}
+
+#searchField{
+    color: white;
+    background-color: #141b29;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255, 255, 255, 0.8);
+    opacity: 1; /* Firefox */
+    
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}

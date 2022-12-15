@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        #content{
+            width: 100vw;
+            /* height: 100vh; */
+            border: 1px solid rgb(255, 255, 255);
+            /* margin: auto; */
+        }
+        .content{
+            width: 100vw;
+            background-color: #0B1F35;
+            color: white;
+            /* height: 100vh; */
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 130px;
+        }
+        .contentDiv{
+            width: 90vw;
+            /* height: 60vh; */
+            /* border: 1px solid green; */
+            margin: 50px auto;
+            /* margin-top: 30px; */
+            display: flex;
+        }
+        .contentDiv .contentDivLeft img {
+            /* width: 300px; */
+            height: 450px;
+        }
+        .contentDivLeft{
+            margin-right: 50px;
+        }
+
+        .contentCastParent{
+            width: 100vw;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+        .contentCast{
+            width: 90vw;
+            /* height: 30vh; */
+            /* border: 1px solid green; */
+            margin:auto;
+        }
+        .contentCastDivParent{
+            overflow-x: scroll;
+        }
+        .contentCastDiv{
+            width: 90vw;
+            /* height: auto; */
+            /* border: 1px solid green; */
+            display: flex;
+            margin: 0;
+            padding: 0;
+            /* overflow-x: scroll; */
+            margin-bottom: 50px;
+            list-style-type: none;
+            list-style-position: inside;
+        }
+        .castBox{
+            margin: 0px 8px;
+            min-width: 140px;
+            width: 140px;
+            border-radius: 5px;
+            border: 1px solid rgb(229, 229, 229);
+            box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+        }
+        .castBox .castBoxImg{
+            width: 100%;
+        }
+        .castBox > div > p {
+            margin-bottom: 0;
+            font-size: 0.9em;
+        }
+        .castBox > div > h3 {
+            font-size: 1em;
+        }
+        
+        .castBox > div {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navberFixed">
+            <div class="navContainer">
+                <div class="logo"><a href="index.html">MASAI</a></div>
+                <div class="search-container right-element">
+                    <input oninput="showData()" type="search" id="searchField" placeholder="Search"><button onclick="showData()">Search</button>
+                    <div class="result-holder element-show" id="resultHolder">
+                        <!-- <a href="movie.html">
+                            <div class="result-holderDiv">
+                                <div class="result-holderDivImgDiv">
+                                    <img class="result-holderDivImg" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_2_5x/sources/r1/cms/prod/4595/674595-h" alt="">
+                                </div>
+                                <div>
+                                    <h2>Thor</h2>
+                                    <p>desc</p>
+                                </div>
+                            </div>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="loging right-element"><a href="trending.html">Treanding</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="content">
+            <div class="contentDiv">
+                <div class="contentDivLeft">
+                    <img id="contentDivLeftImg" src="https://www.themoviedb.org/t/p/w1280/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg" alt="">
+                </div>
+                <div class="contentDivRight">
+                    <h2 id="name">Movie Name</h2>
+                    <h5 id="year">Year of release</h5>
+                    <h5 id="rating">imdb Rating</h5>
+                    <h4>Overview</h4>
+                    <p id="overview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime provident qui, vero exercitationem dignissimos voluptatibus corrupti neque necessitatibus. Ab sit quaerat libero nemo eos fugit fugiat laborum sed cum debitis!</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentCastParent">
+            <div class="contentCast">
+                <h2>Top Billed Cast</h2>
+                <div class="contentCastDivParent">
+                    <ol class="contentCastDiv">
+                        <!-- <div class="castBox">
+                            <img height="150px" width="120px" src="${cast[0].profile_path}" alt="">
+                            <div>
+                                <h3>cast[0].name || cast[0].original_name</h3>
+                                <p>cast[0].character</p>
+                            </div>
+                        </div> -->
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>
+<script>
+    var element = JSON.parse(localStorage.getItem("movie"));
+    // console.log(element," clicked ");
+    document.getElementById("contentDivLeftImg").src = `https://image.tmdb.org/t/p/w500${element.poster_path}`
+    document.getElementById("name").innerText=`${element.title || element.original_title || element.name}`
+    document.getElementById("year").innerText=`Release Date: ${element.release_date}`
+    document.getElementById("rating").innerText=`Rating: ${element.vote_average}`
+    document.getElementById("overview").innerText=`${element.overview}`
+    
+showCast();
+async function showCast(params) {
+    var urlCast = `https://api.themoviedb.org/3/movie/${element.id}/credits?api_key=${API_KEY}&language=en-US`
+    // console.log(urlCast);
+    try{
+        var res = await fetch(urlCast)
+        var res2 = await res.json()
+        console.log(res2.cast);
+        var xyz = document.querySelector(".contentCastDiv");
+        xyz.innerHTML=null
+        res2.cast.forEach(element => {
+            xyz.innerHTML+=
+            `<li class="castBox">
+                <img class="castBoxImg" src="https://image.tmdb.org/t/p/w500${element.profile_path}" alt="">
+                <div>
+                    <h3>${element.original_name || element.name }</h3>
+                    <p>${element.character}</p>
+                </div>
+            </li>`
+        });
+
+    }catch(err){
+        console.log(err, "err");
+    }
+}
+
+</script>

@@ -1,4 +1,81 @@
+body{
+    background: #141b29;
+    color: white;
+}
 .content div{
     height: 100vh;
+    border: 1px solid rgb(255, 255, 255);
+}
+.search-container input {
+    /* position: relative; */
+    width: 240px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid gray;
+    color: var(--TEXT_COLOR_L2);
+    font-size: 16px;
+    outline: 0;
+    padding: 0 28px 0 0px;
+    border-radius: 0;
+    background: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    opacity: 1;
+}
+.search-container .searchIcon {
+    pointer-events: none;
+    height: 15px;
+    width: 16px;
+    opacity: .9;
+}
+.search-container .searchIcon .search-icon {
+    background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDI2IDI2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM5MDk5OTk7fQoJLnN0MXtmaWxsOm5vbmU7ZW5hYmxlLWJhY2tncm91bmQ6bmV3ICAgIDt9Cjwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTkuMiAyLjdjMy41IDAgNi4yIDIuNyA2LjIgNi4yIDAgMy41LTIuNyA2LjItNi4yIDYuMiAtMy41IDAtNi4yLTIuNy02LjItNi4yQzIuOSA1LjUgNS43IDIuNyA5LjIgMi43ek05LjIgMC4yYy00LjkgMC04LjcgMy45LTguNyA4LjcgMCA0LjkgMy45IDguNyA4LjcgOC43IDIuMSAwIDQuMS0wLjggNS42LTJsMC42IDAuNnYxbDcuOSA3LjkgMi4xLTIuMSAtNy45LTcuOWgtMS4xbC0wLjYtMC42YzEuMy0xLjUgMi4xLTMuNSAyLjEtNS42QzE3LjkgNC4xIDE0IDAuMiA5LjIgMC4yeiAgIi8+PC9zdmc+) no-repeat;
+    display: inline-block;
+    width: 100%;
+    height: 23px;
+    margin-left: -15px;
+    margin-bottom: -15px;
+}
+
+
+#main{
+    /* margin-top: 80px; */
     border: 1px solid teal;
+}
+#main__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 95%;
+    margin: auto;
+    gap: 1rem;
+    margin-top: 100px;
+}
+#main__content > div {
+    cursor: pointer;
+    margin: auto;
+    width: 80%;
+    /* border: 1px solid red; */
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+}
+/* #content > div> .title{
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+#main__content > div>img{
+    height: 350px;
+    /* width: 300px; */
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* #content > div */
+h5, h3{
+    margin: 0;
 }

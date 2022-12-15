@@ -30,7 +30,7 @@ function fn(){
             var url_2 = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searched}`
             var res = await fetch(url_2)
             var res2 = await res.json()
-            console.log(res2.results);
+            console.log(res2.results, "search");
             showmovielist(res2.results)
         }catch(err){
             console.log(err,"something err");
@@ -89,3 +89,42 @@ document.querySelector("body").addEventListener("click", function(e){
         </div>
     </div>
 </a> */}
+
+
+
+// trending movies 
+
+var url_3 = `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`
+    getData();
+    async function getData(){
+        try{
+            var res = await fetch(url_3)
+            var res2 = await res.json()
+            console.log(res2.results, " trending");
+            showtrandingData(res2.results)
+        }catch(err){
+            console.log(err,"Something is wrong");
+        }
+    }
+    function showtrandingData(data) {
+        var content = document.getElementById("main__content");
+        // content.innerHTML=null
+        data.forEach(element => {
+            let div = document.createElement("div")
+            // console.log(element, " trending");
+            div.innerHTML+=
+            `
+                <img src="https://image.tmdb.org/t/p/w500${element.poster_path}" alt="">
+                
+                    <h3>${element.title || element.original_title || element.name} </h3>
+                
+                <h5>Rating: ${element.vote_average}</h5>
+            `
+            div.addEventListener("click", function(){
+                console.log(element," clicked ");
+                localStorage.setItem("movie", JSON.stringify(element));
+                location.href = "movie.html"
+            })
+            content.append(div);
+        });
+    }

@@ -1,61 +1,55 @@
-#content{
+#content {
     width: 100vw;
-    /* height: 100vh; */
     border: 1px solid rgb(255, 255, 255);
-    /* margin: auto; */
 }
-.content{
+
+.content {
     width: 100vw;
     background-color: #0B1F35;
     color: white;
-    /* height: 100vh; */
-    /* border: 1px solid red; */
     margin: auto;
     margin-top: 130px;
 }
-.contentDiv{
+
+.contentDiv {
     width: 90vw;
-    /* height: 60vh; */
-    /* border: 1px solid green; */
     margin: 50px auto;
-    /* margin-top: 30px; */
     display: flex;
 }
+
 .contentDiv .contentDivLeft img {
-    /* width: 300px; */
     height: 450px;
 }
-.contentDivLeft{
+
+.contentDivLeft {
     margin-right: 50px;
 }
 
-.contentCastParent{
+.contentCastParent {
     width: 100vw;
-    /* border: 1px solid red; */
     margin: auto;
 }
-.contentCast{
+
+.contentCast {
     width: 90vw;
-    /* height: 30vh; */
-    /* border: 1px solid green; */
-    margin:auto;
+    margin: auto;
 }
-.contentCastDivParent{
+
+.contentCastDivParent {
     overflow-x: scroll;
 }
-.contentCastDiv{
+
+.contentCastDiv {
     width: 90vw;
-    /* height: auto; */
-    /* border: 1px solid green; */
     display: flex;
     margin: 0;
     padding: 0;
-    /* overflow-x: scroll; */
     margin-bottom: 50px;
     list-style-type: none;
     list-style-position: inside;
 }
-.castBox{
+
+.castBox {
     margin: 0px 8px;
     min-width: 140px;
     width: 140px;
@@ -63,17 +57,20 @@
     border: 1px solid rgb(229, 229, 229);
     box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
-.castBox .castBoxImg{
+
+.castBox .castBoxImg {
     width: 100%;
 }
-.castBox > div > p {
+
+.castBox>div>p {
     margin-bottom: 0;
     font-size: 0.9em;
 }
-.castBox > div > h3 {
+
+.castBox>div>h3 {
     font-size: 1em;
 }
 
-.castBox > div {
+.castBox>div {
     margin-left: 8px;
 }

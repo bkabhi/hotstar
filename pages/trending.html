@@ -1,56 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treanding</title>
-    <link rel="stylesheet" href="navbar.css">
-    <style>
-        #main{
-            /* margin-top: 80px; */
-            border: 1px solid teal;
-        }
-        #content{
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            width: 95%;
-            margin: auto;
-            gap: 1rem;
-            margin-top: 100px;
-        }
-        #content > div {
-            margin: auto;
-            /* border: 1px solid red; */
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            border-radius: 5px;
-            padding: 10px;
-        }
-        #content > div>img{
-            height: 350px;
-            margin: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/trending.css">
 </head>
+
 <body>
     <div class="navbar">
         <div class="navberFixed">
             <div class="navContainer">
-                <div class="logo"><a href="../index.html"><h2>Home</h2></a></div>
+                <div class="logo"><a href="../index.html">
+                        <h2>Home</h2>
+                    </a></div>
                 <div class="search-container right-element">
-                    <input oninput="showData()" type="search" id="searchField" placeholder="Search"><button onclick="showData()">Search</button>
+                    <input oninput="showData()" type="search" id="searchField" placeholder="Search"><button
+                        onclick="showData()">Search</button>
                     <div class="result-holder element-show" id="resultHolder">
-                        <!-- <a href="movie.html">
-                            <div class="result-holderDiv">
-                                <div class="result-holderDivImgDiv">
-                                    <img class="result-holderDivImg" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_2_5x/sources/r1/cms/prod/4595/674595-h" alt="">
-                                </div>
-                                <div>
-                                    <h2>Thor</h2>
-                                    <p>desc</p>
-                                </div>
-                            </div>
-                        </a> -->
                     </div>
                 </div>
                 <div class="loging right-element"><a href="">Treanding</a></div>
@@ -59,40 +29,10 @@
     </div>
     <div id="main">
         <div id="content">
-            <!-- <div>
-                <img src="" alt="">
-                <h2>name</h2>
-                <h4>rating</h4>
-            </div> -->
         </div>
     </div>
 </body>
+
 </html>
 <script src="../scripts/index.js"></script>
-<script>
-// var API_KEY = "5e9e07c99c39fc2ae00eb88b3212ea61";
-    var url_3 = `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`
-    getData();
-    async function getData(){
-        try{
-            var res = await fetch(url_3)
-            var res2 = await res.json()
-            console.log(res2.results);
-            showtrandingData(res2.results)
-        }catch(err){
-            console.log(err,"Something is wrong");
-        }
-    }
-    function showtrandingData(data) {
-        var content = document.getElementById("content");
-        // content.innerHTML=null
-        data.forEach(element => {
-            content.innerHTML+=
-            `<div>
-                <img src="https://image.tmdb.org/t/p/w500${element.poster_path}" alt="">
-                <h2>${element.title || element.original_title || element.name} </h2>
-                <h4>Rating: ${element.vote_average}</h4>
-            </div>`
-        });
-    }
-</script>
+<script src="../scripts/trending.js"></script>

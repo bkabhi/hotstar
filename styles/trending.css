@@ -1,0 +1,24 @@
+#main {
+    border: 1px solid teal;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 95%;
+    margin: auto;
+    gap: 1rem;
+    margin-top: 100px;
+}
+
+#content>div {
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#content>div>img {
+    height: 350px;
+    margin: auto;
+}

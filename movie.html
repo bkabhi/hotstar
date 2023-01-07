@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/movie.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navberFixed">
+            <div class="navContainer">
+                <div class="logo">
+                    <a href="./index.html">
+                        <h2>Home</h2>
+                    </a>
+                </div>
+                <div class="search-container right-element">
+                    <input oninput="showData()" type="search" id="searchField" placeholder="Search">
+                    <div class="searchIcon  ">
+                        <i class="search-icon"></i>
+                    </div>
+                    <div class="result-holder element-show" id="resultHolder">
+                    </div>
+                </div>
+                <div class="loging right-element"><a href="#">Profile</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="content">
+            <div class="contentDiv">
+                <div class="contentDivLeft">
+                    <img id="contentDivLeftImg"
+                        src="https://www.themoviedb.org/t/p/w1280/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg" alt="">
+                </div>
+                <div class="contentDivRight">
+                    <h2 id="name">Movie Name</h2>
+                    <h5 id="year">Year of release</h5>
+                    <h5 id="rating">imdb Rating</h5>
+                    <h4>Overview</h4>
+                    <p id="overview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime provident qui,
+                        vero exercitationem dignissimos voluptatibus corrupti neque necessitatibus. Ab sit quaerat
+                        libero nemo eos fugit fugiat laborum sed cum debitis!</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentCastParent">
+            <div class="contentCast">
+                <h2>Top Billed Cast</h2>
+                <div class="contentCastDivParent">
+                    <ol class="contentCastDiv">
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./scripts/index.js"></script>
+<script src="./scripts/movie.js"></script>

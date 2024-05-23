@@ -1,4 +1,4 @@
 # hotstar
 
 
-https://hotstar-movies-app.netlify.app/index.html
+https://hotstar-bkabhi.netlify.app
